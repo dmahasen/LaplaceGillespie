@@ -19,6 +19,7 @@ using namespace std;
 #include <cstring>
 #include <ctime>
 
+
 #include "mt19937ar.c"
 /* Mersenne Twister to generate random variates on [0,1].
    mt19937ar.c is available at 

@@ -1,39 +1,27 @@
 {
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-        "configurations": [
-
-
-            {
-                "name": "(gdb) Launch",
-                "type": "cppdbg",
-                "request": "launch",
-                "program": "/home/mahasen/projects/helloworld/helloworld.out",
-                "args": [""],
-                "stopAtEntry": true,
-                "cwd": "/home/mahasen/projects/helloworld/",
-                "environment": [],
-                "externalConsole": true,
-                "windows": {
-                    "MIMode": "gdb",
-                    "miDebuggerPath": "/usr/bin/gdb",
-                    "setupCommands": [
-                        {
-                            "description": "Enable pretty-printing for gdb",
-                            "text": "-enable-pretty-printing",
-                            "ignoreFailures": true
-                        }
-                    ]
-                },
-                "pipeTransport": {
-                    "pipeCwd": "",
-                    "pipeProgram": "c:\\windows\\System32\\bash.exe",
-                    "pipeArgs": ["-c"],
-                    "debuggerPath": "/usr/bin/gdb"
-                },
-                "sourceFileMap": {
-                    "/mnt/d": "D:/",
-                    "/usr": "C:\\Users\\Mahasen\\AppData\\Local\\Packages\\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\\LocalState\\rootfs\\usr\\"
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/nMGA-LGA-no-binary-tree.o",
+            "args": [ "1", "5"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
                 }
-            }
-        ]
+            ]
+        }
+    ]
 }

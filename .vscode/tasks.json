@@ -1,23 +1,34 @@
 {
     "version": "2.0.0",
-    "windows": {
-        "options": {
-            "shell": {
-                "executable": "c:\\windows\\System32\\bash.exe",
-                "args": ["-c"]
-            }
-        }
-    },
     "tasks": [
         {
-            "label": "build hello world on WSL",
+            "label": "LGA-binary tree",
             "type": "shell",
             "command": "g++",
             "args": [
                 "-g",
+                "-I",
+                "${workspaceRoot}/include/",
+                "LGA-binary-tree.cc",
                 "-o",
-                "/home/mahasen/projects/LaplaceGillespie/LGA-binary-tree.out",
-                "LGA-binary-tree.cc"
+                "LGA-binary-tree.o"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "nMGA",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-I",
+                "${workspaceRoot}/include/",
+                "nMGA-LGA-no-binary-tree.cc",
+                "-o",
+                "nMGA-LGA-no-binary-tree.o"
             ],
             "group": {
                 "kind": "build",
@@ -28,13 +39,18 @@
             ]
         },
         {
-            "label": "echo",
             "type": "shell",
-            "command": "echo ${workspaceFolder}\\include",
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "label": "g++ build active file",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            }
         }
     ]
 }
-
